@@ -155,6 +155,8 @@ public class BoosCoolDownListener implements Listener {
     private void onPlayerCommandPreprocess(PlayerCommandPreprocessEvent event) {
         Player player = event.getPlayer();
         UUID uuid = player.getUniqueId();
+
+	/* Removed because we use these -Absentee23
         if (event.getMessage().contains(":")) {
             Pattern p = Pattern.compile("^/([a-zA-Z0-9_]+):");
             Matcher m = p.matcher(event.getMessage());
@@ -166,7 +168,7 @@ public class BoosCoolDownListener implements Listener {
                     return;
                 }
             }
-        }
+        } */
         for (String key : commandQueue.keySet()) {
             String[] keyList = key.split("@");
             if (keyList[0].equals(String.valueOf(uuid))) {
